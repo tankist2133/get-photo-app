@@ -8,34 +8,28 @@ body {
     color: #ffffff;
     font-family: "Oswald", sans-serif;
     background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
-}
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     height: 100vh;
 }
-.photo {
+.container{
+    max-width: 1600px;
+    margin: 20px 0 auto;
+    padding: 0 15px;
     display: flex;
-    flex-direction: column;
-    width: 50%;
-    height: 50%;
-    padding: 30px;
+    justify-content: space-between;
 }
-.photo h1 {
-    max-width: 520px;
-    font-family: sans-serif;
-    margin-bottom: 30px;
-    font-size: 29px;
+.photo{
+    width: 60%;
+
+    
 }
-.photo img {
-    border-radius: 5px;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+.photo__top h2 {
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid white;
 }
-.photo button {
+.photo__top button {
+    display: flex;
     max-width: 350px;
     font-size: 14px;
     color: #fff;
@@ -47,23 +41,63 @@ body {
     margin-bottom: 30px;
     cursor: pointer;
 }
+.photo__bottom {
+    width: 100%;
+    height: 700px;
+    overflow: hidden;
+}
+.photo__bottom img {
+    max-width: calc(100% - 15px);
+    height: 100%;
+    object-fit: cover;
+}
+.settings {
+    width: 40%;
+    height: 100vh;
+    border-left: 1px solid white;
+    padding-left: 50px;
+}
+.settings h2 {
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid white;
+}
+.settings input {
+    width: 100%;
+    background: linear-gradient(90deg, #0066CC 0%, #c500cc 100%);
+    padding: 10px 30px;
+    border: 2px solid #0066cc;
+    box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+    border-radius: 50px;
+    outline: none;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    color: white;
+    font-weight: 600;
+}
+.settings input::placeholder {
+    color: white;
+}
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width:800px) {
+    .container {
+        max-width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: initial;
+    }
     .photo {
         width: 100%;
     }
-    .photo h1 {
-        max-width: 100%;
+    .photo__bottom {
+        max-height: 400px;
     }
-}
-@media screen and (max-width: 620px) {
-    .photo h1 {
-        font-size: 24px;
-    }
-}
-@media screen and (orientation: landscape) {
-    .container {
+    .settings {
+        width: 100%;
         height: auto;
+        border-left: none;
+        padding-left: 0;
     }
 }
