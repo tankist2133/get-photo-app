@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    color: #ffffff;
+    font-family: "Oswald", sans-serif;
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.photo {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 50%;
+    padding: 30px;
+}
+.photo h1 {
+    max-width: 520px;
+    font-family: sans-serif;
+    margin-bottom: 30px;
+    font-size: 29px;
+}
+.photo img {
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+}
+.photo button {
+    max-width: 350px;
+    font-size: 14px;
+    color: #fff;
+    background: linear-gradient(90deg, #0066CC 0%, #c500cc 100%);
+    padding: 10px 30px;
+    border: 2px solid #0066cc;
+    box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+    border-radius: 50px;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 800px) {
+    .photo {
+        width: 100%;
+    }
+    .photo h1 {
+        max-width: 100%;
+    }
+}
+@media screen and (max-width: 620px) {
+    .photo h1 {
+        font-size: 24px;
+    }
+}
+@media screen and (orientation: landscape) {
+    .container {
+        height: auto;
+    }
+}
