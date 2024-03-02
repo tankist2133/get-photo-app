@@ -2,12 +2,14 @@
 
 const getPhoto = document.getElementById('getPhoto');
 const sendResponse = document.getElementById('sendResponse');
-const keyWorld = document.getElementById('keyWorld')
+const keyWorld = document.getElementById('keyWorld');
+const keyWords = document.getElementById('keyWords');
 let img = document.createElement('img');
 
 
 
 sendResponse.addEventListener('click', () => {
+    keyWords.innerHTML = ''
     const xhr = new XMLHttpRequest();
 
     let query = keyWorld.value;
@@ -24,8 +26,16 @@ sendResponse.addEventListener('click', () => {
             let imgUrl = data['links']['download'];
             img.src = imgUrl;
             getPhoto.appendChild(img);
-            console.log('Запрос:' + query)
+            
 
+            let p_tags = document.createElement('p')
+            keyWords.appendChild(p_tags)
+            data['tags'].forEach(element => {
+                
+                let text_node = document.createTextNode(element['title'] + ', ')
+                p_tags.appendChild(text_node);
+                console.log(p_tags)
+            });
         } else {
             console.error("Ошибка запроса: " + xhr.status)
         }
@@ -37,3 +47,5 @@ sendResponse.addEventListener('click', () => {
 
     xhr.send()
 });
+
+

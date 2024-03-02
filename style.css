@@ -79,8 +79,26 @@ body {
 .settings input::placeholder {
     color: white;
 }
-
-
+.key-words{
+    padding: 10px;
+}
+.warning {
+    background-color: red;
+    color: white;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    max-width: 350px;
+}
+.warning img {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 4px;
+    top: 16px;
+}
 @media screen and (max-width:800px) {
     .container {
         max-width: 100%;
